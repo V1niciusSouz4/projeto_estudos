@@ -205,16 +205,17 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-crud/dev/1721239147239-2024-07-17T17:59:07.239Z/serverless-crud.zip"
+                "S3Key": "serverless/serverless-crud/dev/1721309657320-2024-07-18T13:34:17.320Z/serverless-crud.zip"
               },
-              "Handler": "handler.handler",
+              "Handler": "src/handler.handler",
               "Runtime": "nodejs20.x",
               "FunctionName": "serverless-crud-dev-api",
               "MemorySize": 1024,
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "USERS_TABLE": "users-table-dev"
+                  "USERS_TABLE": "users-table-dev",
+                  "NODE_OPTIONS": "--enable-source-maps"
                 }
               },
               "Role": {
@@ -228,14 +229,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersion9Px3wigN3pa1JfP8SSWa45wfI2hT7zYjdiT9C3f1Cs": {
+          "ApiLambdaVersiongo3LC6C0QfxauypSfJ0drlfS9pl2mKjiYtKkC4XUHhw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "HZUk5r/wxMiRvF09SZe2gJasvDTQhrH6s7pMA0VYnlk="
+              "CodeSha256": "cPoBYEsavEpbmZtt8jiTXU9MKi8Pmu3frJ5AGn9uY3Y="
             }
           },
           "HttpApi": {
@@ -362,7 +363,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersion9Px3wigN3pa1JfP8SSWa45wfI2hT7zYjdiT9C3f1Cs"
+              "Ref": "ApiLambdaVersiongo3LC6C0QfxauypSfJ0drlfS9pl2mKjiYtKkC4XUHhw"
             },
             "Export": {
               "Name": "sls-serverless-crud-dev-ApiLambdaFunctionQualifiedArn"
@@ -500,7 +501,7 @@
     "pluginsData": {},
     "functions": {
       "api": {
-        "handler": "handler.handler",
+        "handler": "src/handler.handler",
         "events": [
           {
             "httpApi": "*",
@@ -508,12 +509,15 @@
           }
         ],
         "name": "serverless-crud-dev-api",
+        "environment": {
+          "NODE_OPTIONS": "--enable-source-maps"
+        },
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersion9Px3wigN3pa1JfP8SSWa45wfI2hT7zYjdiT9C3f1Cs"
+        "versionLogicalId": "ApiLambdaVersiongo3LC6C0QfxauypSfJ0drlfS9pl2mKjiYtKkC4XUHhw"
       }
     },
     "resources": {
@@ -564,11 +568,10 @@
     "appId": null,
     "org": "viniciussouza",
     "orgId": null,
-    "layers": {},
-    "artifact": "C:\\Users\\Vinicius Souza\\Documents\\sirioLibanes\\.serverless\\serverless-crud.zip"
+    "layers": {}
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-crud/dev/1721239147239-2024-07-17T17:59:07.239Z",
+    "artifactDirectoryName": "serverless/serverless-crud/dev/1721309657320-2024-07-18T13:34:17.320Z",
     "artifact": "serverless-crud.zip"
   }
 }

@@ -11,9 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/express": "^4.17.21",
     "aws-sdk": "^2.1659.0",
     "express": "^4.19.2",
     "serverless": "^4.1.12",
-    "serverless-http": "^3.2.0"
+    "serverless-http": "^3.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
   }
 }
