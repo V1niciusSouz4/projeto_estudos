@@ -38,7 +38,6 @@ app.get("/user-by-id/:userId", (req, res) => __awaiter(void 0, void 0, void 0, f
         }
     }
     catch (error) {
-        console.log(error);
         res.status(500).json({ error: "Não foi possível retornar o usuário" });
     }
 }));
@@ -56,7 +55,6 @@ app.get("/users", (_, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
     catch (error) {
-        console.log(error);
         res.status(500).json({ error });
     }
 }));
@@ -84,7 +82,6 @@ app.put("/user-edit/:userId", (req, res) => __awaiter(void 0, void 0, void 0, fu
         res.json(Attributes);
     }
     catch (error) {
-        console.log(error);
         res.status(500).json({ error: "Não foi possível atualizar o usuário" });
     }
 }));
@@ -103,7 +100,6 @@ app.post("/users", (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         return res.json({ userId, name, email });
     }
     catch (error) {
-        console.log(error);
         return res.status(500).json({ error: "Não foi possível criar o usuário" });
     }
 }));
@@ -125,7 +121,6 @@ app.delete("/user-delete/:userId", (req, res) => __awaiter(void 0, void 0, void 
             res.status(404).json({ error: "Usuário não encontrado" });
         }
         else {
-            console.log(error);
             res.status(500).json({ error: "Não foi possível deletar o usuário" });
         }
     }

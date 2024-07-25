@@ -7,6 +7,10 @@ export interface interParamsWithKey {
 
 export interface interParamsWithoutKey {
     TableName: string;
+    FilterExpression?: string;
+    ExpressionAttributeValues?: {
+        [key: string]: any;
+    };
 }
 
 export interface interParamsWithValidations extends interParamsWithKey {
